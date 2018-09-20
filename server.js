@@ -1,10 +1,12 @@
 "use strict"
 //module.exports = open_server
 // se traen la depoendencias
+const num = process.argv[2];
+const port = process.argv[3];
 const WebSocket = require('ws');
 const client = require('./client')
 var prompt = require('prompt');
-function open_server(name, port, num) {
+function open_server(port, num) {
     const wss = new WebSocket.Server({ port: port });
     var client_num = 0
     // Broadcast to all.
@@ -33,9 +35,9 @@ function open_server(name, port, num) {
                     ws.close()
                 } else {
 
-                    /*
                     msg = 'bienvenido ' + ws.id + ' usuario ' + client_num + '/' + num
-                    wss.clients.forEach(function each(client) {
+                    console.log(msg)
+                    /*wss.clients.forEach(function each(client) {
                         if (client !== ws && client.readyState === WebSocket.OPEN) {
                             client.send(msg);
                         }
@@ -54,4 +56,4 @@ function open_server(name, port, num) {
         });
     });
 }
-open_server('diego', 8085, 3)
+open_server(port, num)
