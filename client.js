@@ -4,14 +4,13 @@ prompt.start()
 const WebSocket = require('ws');
 
 module.exports= Client
-function Client(name,port,cb){
-    console.log(cb)
-    return new client(name,port,cb)
+function Client(name,address,cb){
+    return new client(name,address,cb)
 }
 class client {
-    constructor(name, port,cb) {
+    constructor(name, address,cb) {
         this.name = name
-        this.ws = new WebSocket('ws://localhost:' + port);
+        this.ws = new WebSocket('ws://'+address);
         let ws=this.ws
         ws.on('open', function open() {
             ws.send(name);

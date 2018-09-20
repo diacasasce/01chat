@@ -53,7 +53,5 @@ function open_server(name, port, num) {
             //console.log(ws.id + '-> ' + er)
         });
     });
-    let testC = client('diego', 8085, console.log)
-    testC.talk(testC, console.log)
 }
 open_server('diego', 8085, 3)
