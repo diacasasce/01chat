@@ -5,6 +5,7 @@ const num = process.argv[2];
 const port = process.argv[3];
 const WebSocket = require('ws');
 const client = require('./client')
+const ip = require('./ip')
 var prompt = require('prompt');
 function open_server(port, num) {
     const wss = new WebSocket.Server({ port: port });
@@ -57,3 +58,4 @@ function open_server(port, num) {
     });
 }
 open_server(port, num)
+console.log(ip(port))

@@ -1,7 +1,10 @@
 const client = require('./client')
+const tictactoe = require('./tictactoe')
 const name = process.argv[2];
 const port = process.argv[3];
 const fig = process.argv[4];
+
+
 let testC = client(name, port, move)
 testC.talk(testC, data, move)
 let a = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
@@ -65,3 +68,10 @@ function check(ms) {
 
 }
 //print(a)
+
+
+/*
+let game=tictactoe(fig)
+let testC = client(name, port, game.move)
+testC.talk(testC, game.data, game.move)
+*/
